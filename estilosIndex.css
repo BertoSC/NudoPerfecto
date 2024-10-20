@@ -1,0 +1,340 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+html {
+    height: 800px;
+    margin: 0;
+}  
+
+
+body {
+    min-height: 100%; 
+    width: 100%;
+    margin: 0;
+    background: linear-gradient(to right, rgba(74, 74, 74, 1), rgba(74, 74, 74, 0.2));
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+
+#header {   
+    width: 100%;
+    height: 20%;
+    background-color: #001f3f;
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    position: sticky;
+    top: 0;
+    padding: 15px;
+    z-index: 1000; /* Asegúrate de que el encabezado esté en la parte superior */     
+}
+
+#bloqueIzq {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;  
+}
+
+#bloqueDer {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#logo {
+    max-width: 30%; 
+    height: auto; 
+    border: 1px solid #e2e2d5;
+}
+
+#lema {
+    color: #e2e2d5;
+    font-family: 'Baskerville', serif;
+    font-size: 30px; 
+    text-align: center;
+    font-style: italic; 
+}
+
+.menu {
+    font-family: 'Baskerville', serif;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    margin: 0 15px; 
+}
+
+.menu li a {
+    color: #e2e2d5;
+    text-decoration: none; 
+    padding: 5px 10px; 
+    transition: background-color 0.6s; 
+}
+
+.menu li a:hover {
+    background-color: #e2e2d5;
+    color: #001f3f;
+    border-radius: 0.1%; 
+}
+
+#menu{
+    margin-right: 50px;
+}
+
+.icono {
+    max-width: 40px;    
+    height: auto; 
+    vertical-align: middle; 
+    padding-right: 40px;
+    padding-left: 20px;
+}
+
+/*
+
+
+/* MAIN */
+
+#principal {
+    width: 100%;
+    min-height: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* BANNER DE FOTO GRANDE*/
+
+#banner {
+    width: 100%;
+    min-height: 700px;
+    background-image: url('img/hombrecorbata.png');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: #e2e2d5 5px solid;
+    box-sizing: border-box;
+   
+}
+
+/*SECCIÓN DE NOVEDADES*/
+
+#novedades {
+    width: 80%;
+    background-color: #e2e2d5;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 13px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+    transition: box-shadow 0.3s ease; /* Transición suave de sombra */
+}
+
+#novedadesTit{
+    
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 30px;
+    color: #800020;
+    text-align: center;
+    margin: 10px;    
+}
+
+#articulos{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grid responsivo */
+    gap: 20px; /* Espacio entre elementos */
+    margin: 40px;
+    align-items:center ;
+    
+
+}
+
+.corbata-container {
+    min-width: 30%; /* Ajusta el ancho de las corbatas */
+    height: 400px; /* Altura fija */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;    
+
+}
+
+.corbataNov1, .corbataNov2, .corbataNov3 {
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    border-radius: 25%;
+    position: relative; /* Para posicionar el texto */
+    overflow: hidden;
+    box-shadow: 0px 13px 10px rgba(0, 0, 0, 0.3); /* Sombra */
+    transition: box-shadow 0.3s ease; /* Transición suave de sombra */
+}
+
+.boton-corbat {
+    display: block; /* Asegura que el botón se muestre en su propia línea */
+    width: 100px; /* Ancho del botón */
+    margin: 20px auto; /* Centra el botón horizontalmente */
+    background-color: #800020; /* Color de fondo */
+    color: white; /* Color del texto */
+    text-align: center; /* Centra el texto */
+    padding: 10px 0; /* Espaciado interno */
+    font-family: 'Roboto', sans-serif;
+    text-decoration: none; /* Sin subrayado */
+    border: 2px solid transparent; /* Borde invisible por defecto */
+    border-radius: 5px; /* Bordes redondeados */
+    transition: background-color 0.3s ease, border 0.3s ease; /* Transiciones suaves */
+    box-sizing: border-box;
+}
+
+.boton-corbat:hover {
+    background-color: rgba(128, 0, 32, 0.8); /* Color de fondo más claro al hacer hover */
+    border: 2px solid #d4af37; /* Borde dorado al hacer hover */
+    box-sizing: border-box;
+}
+
+.corbataNov1::before {
+    content: "Blue Royal Tie Set : 30 euros"; /* Texto para la corbata 1 */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semi-transparente */
+    color: white;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0; /* Oculto inicialmente */
+    transition: opacity 0.5s ease; /* Transición suave */
+}
+
+.corbataNov1:hover::before {
+    opacity: 1; /* Muestra el texto al hacer hover */
+}
+
+.corbataNov2::before {
+    content: "Royal Pink Tie Set : 30 euros"; /* Texto para la corbata 2 */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.corbataNov2:hover::before {
+    opacity: 1;
+}
+
+.corbataNov3::before {
+    content: "Purple Floral Tie : 17 euros"; /* Texto para la corbata 3 */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: white;
+    font-size: 20px;
+    font-family: 'Roboto', sans-serif;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.corbataNov3:hover::before {
+    opacity: 1;
+}
+
+
+/* SECCIÓN DE COLECCIONES*/
+
+#colecciones {
+    width: 100%;
+    max-width: 1600px; /* Limita el ancho en pantallas grandes */
+    background-color: transparent;
+    box-sizing: border-box;
+    margin-bottom: 70px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 imágenes por fila */
+    gap: 40px; /* Espacio entre las imágenes */
+    padding: 0 40px; /* Espacio lateral */
+}
+
+/* Ajustes responsivos para pantallas más pequeñas */
+@media (max-width: 1024px) {
+    #colecciones {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Ajuste responsivo para pantallas más pequeñas */
+    }
+}
+
+.imagen-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: transparent;
+    border-radius: 10px;
+}
+
+.imagen-container img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.imagen-container:hover img {
+    transform: scale(1.05); /* Efecto zoom */
+}
+
+
+/* FOOTER */
+
+#footer {
+    
+    width: 100%;
+    background-color: #001f3f;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.footerText{
+    font-family: 'Baskerville', serif;
+    font-size: 15px;
+    color: #e2e2d5;
+    font-style: italic;
+}
+
+
+
+
+
+
