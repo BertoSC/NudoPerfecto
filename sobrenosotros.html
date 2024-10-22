@@ -12,20 +12,20 @@
 <body>
     <header id="header">
         <div id="bloqueIzq">
-            <img src="img/LogotipoRed.png" alt="logotipo" id="logo">
+            <a href="index.html">
+                <img src="img/LogotipoRed.png" alt="logotipo" id="logo"></a>
             <p id="lema">"Tu corbata, tu estilo"</p>
         </div>
 
         <div id="bloqueDer">
             <nav id="menu">
                 <ul class="menu">
-                    <li><a href="#CATÁLOGO">COLECCIONES</a></li>
-                    <li><a href="#NOSOTROS">CONÓCENOS</a></li>
-
+                    <li><a href="colecciones.html">COLECCIONES</a></li>
+                    <li><a href="sobrenosotros.html">CONÓCENOS</a></li>
+                    <li> <img id="iconoCarrito" src="img/carrito.png" alt="Carrito" class="icono"></li>
                 </ul>
             </nav>
-            <a href="#INDEX" target="_blank">
-                <img src="img/carrito.png" alt="Carrito" class="icono">
+           
             </a>
 
         </div>
@@ -39,26 +39,26 @@
             
             
             <div class="text-container">
-                <p>En <strong>'NUDO PERFECTO'</strong>, nos dedicamos a realzar la elegancia masculina a través de uno
-                    de los accesorios más icónicos y atemporales: la corbata. Nuestra pasión por el estilo clásico,
-                    combinado con un enfoque en la calidad y el diseño, nos ha llevado a crear una tienda en línea donde
-                    cada corbata es una declaración de distinción.</p>
+                <p>En <strong>'NUDO PERFECTO'</strong>, nos dedicamos a realzar la elegancia masculina a través de <strong>uno
+                    de los accesorios más icónicos</strong> y atemporales: <strong>la corbata</strong>.</p>
+                 <p> Nuestra pasión por el estilo clásico, combinado con un enfoque en la calidad y el diseño, nos ha llevado a crear una tienda en línea donde
+                    <strong>cada corbata es una declaración de distinción</strong>.</p>
                     
-                <p>Cada pieza en nuestra colección ha sido cuidadosamente seleccionada, confeccionada con materiales de
-                    la más alta calidad y con un meticuloso detalle en el acabado. Nos enorgullecemos de ofrecer
-                    corbatas que no solo complementan un traje, sino que destacan la personalidad y buen gusto de quien
-                    las lleva. Desde patrones tradicionales hasta diseños modernos y vanguardistas, en <strong>'NUDO
-                        PERFECTO'</strong> encontrarás la pieza perfecta para cualquier ocasión, ya sea una reunión de
+                <p>Cada pieza en nuestra colección ha sido cuidadosamente seleccionada, confeccionada con <strong>materiales de
+                    la más alta calidad</strong> y con un meticuloso detalle en el acabado.</p>
+                <p> Nos enorgullecemos de ofrecer corbatas que no solo complementan un traje, sino que <strong>destacan la personalidad y buen gusto</strong> de quien
+                    las lleva. </p>
+                    
+                 <p>Desde patrones tradicionales hasta diseños modernos y vanguardistas, en <strong>'NUDO
+                    PERFECTO'</strong> encontrarás la pieza perfecta para cualquier ocasión, ya sea una reunión de
                     negocios, un evento formal o un momento especial.</p>
                     
-    
-
-                <p>Nuestro compromiso es brindar a nuestros clientes una experiencia de compra excepcional, donde la
+                <p>Nuestro compromiso es brindar a nuestros clientes <strong>una experiencia de compra excepcional</strong>, donde la
                     atención al detalle y el servicio personalizado son prioridad. Sabemos que una corbata no es solo un
                     accesorio, es una expresión de estilo y sofisticación.</p>
 
-                <p>Te invitamos a explorar nuestra colección y a descubrir cómo un pequeño detalle puede hacer una gran
-                    diferencia.</p>
+                <p>Te invitamos a explorar nuestra colección y a descubrir cómo <strong>un pequeño detalle puede hacer una gran
+                    diferencia</strong>.</p>
             </div>
             <div class="image-container">
                 <img src="img/trajeendetalleCort.png" alt="Imagen de corbata elegante">
@@ -79,7 +79,21 @@
 
        
     </footer>
-
+    <!-- Modal para el resumen de compra -->
+    <div id="modalCarrito" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Resumen de compra</h2>
+            <div id="contenidoCarrito">
+                <!-- Aquí iría el contenido dinámico del carrito -->
+                <p>Aquí se mostrará el resumen de los productos en el carrito.</p>
+            </div>
+            <button id="btnPagar">Proceder al Pago</button>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+        
 </body>
 
 </html>

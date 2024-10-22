@@ -16,12 +16,76 @@ body {
     flex-direction: column;
 }
 
+.contador {
+    position: absolute;
+    background-color: red; /* Color del fondo del contador */
+    color: white; /* Color del texto del contador */
+    border-radius: 50%; /* Hace que el contador sea redondo */
+    padding: 2px 5px; /* Espaciado interno */
+    font-size: 12px; /* Tamaño de la fuente */
+    font-weight: bold; /* Negrita */
+    display: inline-block; /* Para que se muestre en línea con el ícono */
+}
+
+
+/* Estilos del Modal */
+
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; 
+    z-index: 1001; /* Asegúrate de que esté sobre otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#btnPagar {
+    background-color: #001f3f;
+    color: #e2e2d5;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#btnPagar:hover {
+    background-color: #001736;
+}
+
+
 
 /* HEADER */
 
 #header {   
     width: 100%;
-    height: 20%;
     background-color: #001f3f;
     display: flex; 
     justify-content: space-between;
@@ -50,7 +114,7 @@ body {
 }
 
 #logo {
-    max-width: 30%; 
+    max-width: 50%; 
     height: auto; 
     border: 1px solid #e2e2d5;
 }
@@ -58,7 +122,7 @@ body {
 #lema {
     color: #e2e2d5;
     font-family: 'Baskerville', serif;
-    font-size: 30px; 
+    font-size: 19px; 
     text-align: center;
     font-style: italic; 
 }
@@ -69,53 +133,102 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
+    font-size: 19px;
 }
 
 .menu li {
     margin: 0 15px; 
+    padding: 5px 10px; 
 }
 
-.menu li a {
+.menu li > a {
     color: #e2e2d5;
     text-decoration: none; 
-    padding: 5px 10px; 
     transition: background-color 0.6s; 
 }
 
-.menu li a:hover {
-    background-color: #e2e2d5;
-    color: #001f3f;
-    border-radius: 0.1%; 
+.menu li > a:hover {
+    filter: brightness(0) invert(1);
+}
+
+.menu li > img:hover {
+    filter: brightness(0) invert(1);
 }
 
 #menu{
-    margin-right: 50px;
+    margin-right: 65px;
+    align-items: center;
 }
 
 .icono {
-    max-width: 40px;    
+    max-width: 35px;    
     height: auto; 
     vertical-align: middle; 
-    padding-right: 40px;
-    padding-left: 20px;
-    
+           
 }
 
-@media (max-width:600px){
+@media(max-width:1000px){
+    #lema{
+        display: none;
+    }
+}
+
+@media (max-width: 600px) {
     #header {   
-        width: 100%;
-        height: 20%;
-        background-color: #001f3f;
-       display: grid;
-       grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-        align-items: center;
-        box-sizing: border-box;
-        position: sticky;
-        top: 0;
+        display: flex;
+        flex-direction: column; /* Cambia a columna */
+        justify-content: center;
+        align-items: center; /* Centra los elementos horizontalmente */
         padding: 15px;
-        z-index: 1000; /* Asegúrate de que el encabezado esté en la parte superior */     
+        z-index: 1000;
     }
 
+    #bloqueIzq {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Centra los elementos dentro del bloque */
+        align-items: center;
+        margin-bottom: 10px; /* Espacio entre el logo y el lema */
+    }
+
+    #bloqueDer {
+        width: 100%;
+        display: flex;
+        justify-content: center; /* Centra los elementos dentro del bloque */
+        align-items: center;
+    }
+
+    #logo {
+        max-width: 50%; /* Aumenta el tamaño del logo si es necesario */
+        margin-bottom: 10px; /* Agrega un margen debajo del logo */
+    }
+
+    #menu {
+        display: flex;
+        flex-direction: row; /* Asegura que el menú sea horizontal */
+        justify-content: center; /* Centra el menú */
+        align-items: center;
+        width: 100%;
+    }
+
+    .menu {
+        flex-direction: row;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    .menu li {
+        margin: 0 10px;
+    }
+
+    .icono {
+        max-width: 35px;
+        height: auto;
+    }
+
+    #lema {
+        display: block; /* Muestra el lema en pantallas pequeñas */
+    }
 }
 
 
@@ -123,7 +236,7 @@ body {
 #colecciones {
     display: grid; /* Usamos grid en lugar de flex */
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Hace que las imágenes se adapten de manera responsiva */
-    margin: 40px auto; /* Centrar el contenedor y añadir margen superior/inferior */
+    margin: 30px auto; /* Centrar el contenedor y añadir margen superior/inferior */
     width: 80%; /* Ancho total del contenedor */
     gap: 20px; /* Espacio entre los elementos */
     box-sizing: border-box; /* Incluye padding y border en el ancho total */
@@ -137,15 +250,13 @@ body {
 .coleccion a {
     color: white; /* Color del texto */
     text-decoration: none; /* Sin subrayado */
-    font-size: 24px; /* Tamaño de la fuente */
+    font-size: 16px; /* Tamaño de la fuente */
     font-family: 'Baskerville', serif;
 
 }
 
 #colecciones .coleccion {
-
-    flex: 1;
-    height: 50px; /* Altura fija de los divs */
+     /* Altura fija de los divs */
     background-color: #001f3f; /* Color de fondo */
     display: flex; /* Para centrar el texto dentro del div */
     justify-content: center; /* Centra horizontalmente el contenido */
