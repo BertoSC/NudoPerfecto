@@ -217,6 +217,14 @@ body {
     #lema {
         display: block; /* Muestra el lema en pantallas pequeñas */
     }
+
+    .titulo {
+        width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
+        font-size: 18px; /* Ajusta el tamaño de la fuente */
+        justify-content: center; /* Asegura el centrado */
+        text-align: center; /* Centra el texto dentro del título */
+    }
+
 }
 
 
