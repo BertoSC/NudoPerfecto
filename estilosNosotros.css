@@ -124,18 +124,58 @@ body {
     font-size: 19px;
 }
 
+.menu > ul{
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
 .menu li {
     margin: 0 15px; 
     padding: 5px 10px; 
 }
 
+
+/* Subrayado espaciado en el hover para COLECCIONES y CONÓCENOS */
+
 .menu li > a {
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
     color: #e2e2d5;
     text-decoration: none; 
     transition: background-color 0.6s; 
 }
 
-.menu li > a:hover {
+.menu li >a:hover{
+    filter: brightness(0) invert(1);
+}
+
+.menu li > a:hover::after {
+    content: ""; /* Elemento vacío para crear la línea de subrayado */
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Grosor de la línea de subrayado */
+    background-color: #e2e2d5; /* Color de la línea */
+    bottom: -9px; /* Distancia entre el texto y la línea */
+    left: 0;
+    transition: transform 0.3s ease; /* Transición suave para el hover */
+    transform: scaleX(1); /* Mantiene el subrayado a lo largo de todo el ancho */
+    filter: brightness(0) invert(1);
+}
+
+/* Efecto de escala para hacer que aparezca gradualmente */
+
+.menu li > a::after {
+    content: ""; /* Elemento vacío para crear la línea de subrayado */
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Grosor de la línea de subrayado */
+    background-color: #e2e2d5; /* Color de la línea */
+    bottom: -5px; /* Distancia entre el texto y la línea */
+    left: 0;
+    transform: scaleX(0); /* Oculto inicialmente */
+    transform-origin: center;
+    transition: transform 0.3s ease; /* Transición suave */
     filter: brightness(0) invert(1);
 }
 
@@ -149,7 +189,8 @@ body {
 }
 
 .icono {
-    max-width: 35px;    
+    max-width: 35px;
+       
     height: auto; 
     vertical-align: middle; 
            
@@ -177,6 +218,7 @@ body {
         justify-content: center; /* Centra los elementos dentro del bloque */
         align-items: center;
         margin-bottom: 10px; /* Espacio entre el logo y el lema */
+        
     }
 
     #bloqueDer {
@@ -189,6 +231,7 @@ body {
     #logo {
         max-width: 50%; /* Aumenta el tamaño del logo si es necesario */
         margin-bottom: 10px; /* Agrega un margen debajo del logo */
+        margin-left:90px;
     }
 
     #menu {
@@ -197,6 +240,7 @@ body {
         justify-content: center; /* Centra el menú */
         align-items: center;
         width: 100%;
+        margin-left: 60px;
     }
 
     .menu {
@@ -215,18 +259,13 @@ body {
     }
 
     #lema {
-        display: block; /* Muestra el lema en pantallas pequeñas */
+        display: none; /* Muestra el lema en pantallas pequeñas */
     }
 
-    .titulo {
-        width: 100%; /* Ocupa todo el ancho en pantallas pequeñas */
-        font-size: 18px; /* Ajusta el tamaño de la fuente */
-        justify-content: center; /* Asegura el centrado */
-        text-align: center; /* Centra el texto dentro del título */
+    .titulo > h1{
+        text-align: center;
     }
-
 }
-
 
 /*TITULO */
 

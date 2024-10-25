@@ -13,8 +13,8 @@
     <header id="header">
         <div id="bloqueIzq">
             <a href="index.html">
-            <img src="img/LogotipoRed.png" alt="logotipo" id="logo"></a>
-        </a>
+                <img src="img/LogotipoRed.png" alt="Logotipo de Nudo Perfecto" id="logo"></a>
+            </a>
             <p id="lema">"Tu corbata, tu estilo"</p>
         </div>
 
@@ -23,11 +23,12 @@
                 <ul class="menu">
                     <li><a href="colecciones.html">COLECCIONES</a></li>
                     <li><a href="sobrenosotros.html">CONÓCENOS</a></li>
-                    <li> <img id="iconoCarrito" src="img/carrito.png" alt="Carrito" class="icono">
-                        <span id="contador-carrito" class="contador" style="display:none;">0</span> </li><!-- Contador oculto inicialmente -->
+                    <li> <img id="iconoCarrito" src="img/carrito.png" alt="Carrito de la compra" class="icono">
+                        <span id="contador-carrito" class="contador" style="display:none;">0</span>
+                    </li>
                 </ul>
             </nav>
-           
+
             </a>
 
         </div>
@@ -43,125 +44,152 @@
                 <h1>Últimas adquisiciones</h1>
             </div>
             <article id="articulos">
-                <div class="corbata-container">
-                    <div class="corbataNov1" style="background-image: url('img/novedades1.jpg');">
-
+                <div class="producto">
+                    <div class="corbata" style="background-image: url('img/novedades1.png');"></div>
+                    <div class="producto-info">
+                        <p>Blue Royal Tie Set : 17 euros</p>
+                        <label for="cantidad1">Cantidad:</label>
+                        <select id="cantidad1">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <button class="boton-comprar"
+                            onclick="agregarAlCarrito('Purple Floral Tie', 17, 'cantidad1')">Comprar</button>
                     </div>
-                    <label for="cantidad"></label>
-                    <select id="cantidad">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select>   
-                <button class="boton-corbat" onclick="agregarAlCarrito('Corbata 1', 30, 'cantidad')">COMPRAR</button>
                 </div>
 
-                <div class="corbata-container">
-                    <div class="corbataNov2" style="background-image: url('img/novedades2.jpg');">
-
+                <div class="producto">
+                    <div class="corbata" style="background-image: url('img/novedades2.png');"></div>
+                    <div class="producto-info">
+                        <p>Royal Pink Tie Set : 17 euros</p>
+                        <label for="cantidad2">Cantidad:</label>
+                        <select id="cantidad2">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <button class="boton-comprar"
+                            onclick="agregarAlCarrito('Purple Floral Tie', 17, 'cantidad2')">Comprar</button>
                     </div>
-                    <label for="cantidad2"></label>
-                    <select id="cantidad2">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select> 
-                    <button class="boton-corbat" onclick="agregarAlCarrito('Purple Floral Tie', 17, 'cantidad2')">COMPRAR</button>
                 </div>
 
-                <div class="corbata-container">
-                    <div class="corbataNov3" style="background-image: url('img/novedades3.png');">
-
+                <div class="producto">
+                    <div class="corbata" style="background-image: url('img/novedades3.png');"></div>
+                    <div class="producto-info">
+                        <p>Purple Floral Tie : 17 euros</p>
+                        <label for="cantidad3">Cantidad:</label>
+                        <select id="cantidad3">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <button class="boton-comprar"
+                            onclick="agregarAlCarrito('Purple Floral Tie', 17, 'cantidad3')">Comprar</button>
                     </div>
-                    <label for="cantidad3"></label>
-                    <select id="cantidad3">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select> 
-                    <button class="boton-corbat" onclick="agregarAlCarrito('Purple Floral Tie', 17, 'cantidad3')">COMPRAR</button>
                 </div>
 
-                <div class="corbata-container">
-                    <div class="corbataNov3" style="background-image: url('img/novedades3.png');">
-
+                <div class="producto">
+                    <div class="corbata" style="background-image: url('img/novedades4.png');"></div>
+                    <div class="producto-info">
+                        <p>Tetra Green Tie : 17 euros</p>
+                        <label for="cantidad4">Cantidad:</label>
+                        <select id="cantidad4">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <button class="boton-comprar"
+                            onclick="agregarAlCarrito('Purple Floral Tie', 17, 'cantidad4')">Comprar</button>
                     </div>
-                    <label for="cantidad4"></label>
-                    <select id="cantidad4">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                    </select> 
-                    <button class="boton-corbat" onclick="agregarAlCarrito('Purple Floral Tie', 17, 'cantidad4')">COMPRAR</button>
+                </div>
+
+
+                <div class="producto">
+                    <div class="corbata" style="background-image: url('img/novedades5.png');"></div>
+                    <div class="producto-info">
+                        <p>Solid Red Tie : 17 euros</p>
+                        <label for="cantidad5">Cantidad:</label>
+                        <select id="cantidad5">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                        <button class="boton-comprar"
+                            onclick="agregarAlCarrito('Purple Floral Tie', 17, 'cantidad5')">Comprar</button>
+                    </div>
                 </div>
 
 
             </article>
         </section>
         <section id="colecciones">
-                <div class="imagen-container">
-                    <a href="colecciones.html">
-                        <img src="img/corbatadefiestaRET.png" alt="Descripción Imagen 1">
-                    </a>
-                </div>
-                <div class="imagen-container">
-                    <a href="colecciones.html">
-                        <img src="img/corbatadediarioRET.png" alt="Descripción Imagen 2">
-                    </a>
-                </div>
-                <div class="imagen-container">
-                    <a href="colecciones.html">
-                        <img src="img/corbataoriginalRET.png" alt="Descripción Imagen 3">
-                    </a>
-                </div>
-                <div class="imagen-container">
-                    <a href="colecciones.html">
-                        <img src="img/corbataeleganteRET.png" alt="Descripción Imagen 4">
-                    </a>
-                </div>            
+            <div class="imagen-container">
+                <a href="colecciones.html">
+                    <img src="img/corbatadefiestaRET.png" alt="Imagen de corbata de fiesta">
+                </a>
+            </div>
+            <div class="imagen-container">
+                <a href="colecciones.html">
+                    <img src="img/corbatadediarioRET.png" alt="Imagen de corbata de diario">
+                </a>
+            </div>
+            <div class="imagen-container">
+                <a href="colecciones.html">
+                    <img src="img/corbataoriginalRET.png" alt="Imagen de corbata original">
+                </a>
+            </div>
+            <div class="imagen-container">
+                <a href="colecciones.html">
+                    <img src="img/corbataeleganteRET.png" alt="Imagen de corbata elegante">
+                </a>
+            </div>
         </section>
 
-      
+
 
     </main>
     <footer id="footer">
-        <div class= "footerText" id="firma">
+        <div class="footerText" id="firma">
             <p>..: Web diseñada por Alberto González Chao, 2º de DAM :..</p>
         </div>
-        <div class= "footerText" id="copyright"><p>© 2024 Nudo Perfecto. Todos los derechos reservados.</p></div>
+        <div class="footerText" id="copyright">
+            <p>© 2024 Nudo Perfecto. Todos los derechos reservados.</p>
+        </div>
 
-        <div class= "footerText" id="contact">
+        <div class="footerText" id="contact">
             <p>contacto@nudoperfecto.com</p>
             <p>666 66 66 66</p>
         </div>
 
-       
+
     </footer>
 
     <!-- Modal para el resumen de compra -->
-<div id="modalCarrito" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Resumen de compra</h2>
-        <div id="contenidoCarrito">
-            <!-- Aquí iría el contenido dinámico del carrito -->
-            <p>Aquí se mostrará el resumen de los productos en el carrito.</p>
+    <div id="modalCarrito" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Resumen de compra</h2>
+            <div id="contenidoCarrito">
+                <p>Aquí se mostrará el resumen de los productos en el carrito.</p>
+            </div>
+            <button id="btnPagar">Proceder al Pago</button>
         </div>
-        <button id="btnPagar">Proceder al Pago</button>
     </div>
-</div>
 
-<script src="script.js">
-    
-</script>
+    <script src="script.js">
+
+    </script>
 
 </body>
 

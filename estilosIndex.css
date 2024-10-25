@@ -137,18 +137,58 @@ body {
     font-size: 19px;
 }
 
+.menu > ul{
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
 .menu li {
     margin: 0 15px; 
     padding: 5px 10px; 
 }
 
+
+/* Subrayado espaciado en el hover para COLECCIONES y CONÓCENOS */
+
 .menu li > a {
+    position: relative; /* Necesario para posicionar el pseudo-elemento */
     color: #e2e2d5;
     text-decoration: none; 
     transition: background-color 0.6s; 
 }
 
-.menu li > a:hover {
+.menu li >a:hover{
+    filter: brightness(0) invert(1);
+}
+
+.menu li > a:hover::after {
+    content: ""; /* Elemento vacío para crear la línea de subrayado */
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Grosor de la línea de subrayado */
+    background-color: #e2e2d5; /* Color de la línea */
+    bottom: -9px; /* Distancia entre el texto y la línea */
+    left: 0;
+    transition: transform 0.3s ease; /* Transición suave para el hover */
+    transform: scaleX(1); /* Mantiene el subrayado a lo largo de todo el ancho */
+    filter: brightness(0) invert(1);
+}
+
+/* Efecto de escala para hacer que aparezca gradualmente */
+
+.menu li > a::after {
+    content: ""; /* Elemento vacío para crear la línea de subrayado */
+    position: absolute;
+    width: 100%;
+    height: 2px; /* Grosor de la línea de subrayado */
+    background-color: #e2e2d5; /* Color de la línea */
+    bottom: -5px; /* Distancia entre el texto y la línea */
+    left: 0;
+    transform: scaleX(0); /* Oculto inicialmente */
+    transform-origin: center;
+    transition: transform 0.3s ease; /* Transición suave */
     filter: brightness(0) invert(1);
 }
 
@@ -162,7 +202,8 @@ body {
 }
 
 .icono {
-    max-width: 35px;    
+    max-width: 35px;
+       
     height: auto; 
     vertical-align: middle; 
            
@@ -190,6 +231,7 @@ body {
         justify-content: center; /* Centra los elementos dentro del bloque */
         align-items: center;
         margin-bottom: 10px; /* Espacio entre el logo y el lema */
+        
     }
 
     #bloqueDer {
@@ -202,6 +244,7 @@ body {
     #logo {
         max-width: 50%; /* Aumenta el tamaño del logo si es necesario */
         margin-bottom: 10px; /* Agrega un margen debajo del logo */
+        margin-left:90px;
     }
 
     #menu {
@@ -210,6 +253,7 @@ body {
         justify-content: center; /* Centra el menú */
         align-items: center;
         width: 100%;
+        margin-left: 60px;
     }
 
     .menu {
@@ -228,7 +272,7 @@ body {
     }
 
     #lema {
-        display: block; /* Muestra el lema en pantallas pequeñas */
+        display: none; /* Muestra el lema en pantallas pequeñas */
     }
 }
 
@@ -277,7 +321,7 @@ body {
 #novedadesTit{
     
     font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 19px;
+    font-size: 18px;
     color: #800020;
     text-align: center;
     margin: 10px;    
@@ -285,121 +329,59 @@ body {
 
 #articulos{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grid responsivo */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Grid responsivo */
     gap: 20px; /* Espacio entre elementos */
     margin: 40px;
-    align-items:center ;
-    
-
+       
 }
 
-.corbata-container {
-    min-width: 30%; /* Ajusta el ancho de las corbatas */
-    height: 400px; /* Altura fija */
+.producto {
     display: flex;
-    flex-direction: column;
-    box-sizing: border-box;    
-
+    flex-direction: column; /* Coloca los elementos verticalmente */
+    align-items: center; /* Centra los elementos horizontalmente */
+    justify-content: center; /* Centra los elementos verticalmente */
+    border-radius: 10px;
+    overflow: hidden; /* Para que el contenido no se desborde */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+    transition: box-shadow 0.3s ease;
+    box-sizing: border-box;
 }
 
-.corbataNov1, .corbataNov2, .corbataNov3 {
+.producto:hover {
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5); /* Sombra al hacer hover */
+}
+
+.corbata {
     width: 100%;
-    height: 100%;
+    height: 200px; /* Altura fija para las corbatas */
     background-position: center;
     background-size: cover;
-    border-radius: 25%;
-    position: relative; /* Para posicionar el texto */
-    overflow: hidden;
-    box-shadow: 0px 13px 10px rgba(0, 0, 0, 0.3); /* Sombra */
-    transition: box-shadow 0.3s ease; /* Transición suave de sombra */
 }
 
-.boton-corbat {
-    display: block; /* Asegura que el botón se muestre en su propia línea */
-    width: 100px; /* Ancho del botón */
-    margin: 20px auto; /* Centra el botón horizontalmente */
-    background-color: #800020; /* Color de fondo */
+.producto-info {
+    font-family: 'Roboto', sans-serif;
+    padding: 10px;
+    background-color: #e2e2d5; /* Fondo claro */
+    border: 1px solid transparent; /* Borde invisible por defecto */
+}
+
+.boton-comprar {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #800020; /* Color del botón */
     color: white; /* Color del texto */
-    text-align: center; /* Centra el texto */
-    padding: 10px 0; /* Espaciado interno */
     font-family: 'Roboto', sans-serif;
-    text-decoration: none; /* Sin subrayado */
-    border: 2px solid transparent; /* Borde invisible por defecto */
-    border-radius: 5px; /* Bordes redondeados */
-    transition: background-color 0.3s ease, border 0.3s ease; /* Transiciones suaves */
-    box-sizing: border-box;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, border 0.3s ease; /* Añadir transición suave también al borde */
+    border: 2px solid transparent; /* Borde transparente por defecto */
+    box-sizing: border-box; /* Para asegurarse de que el borde esté incluido en las dimensiones del botón */
 }
 
-.boton-corbat:hover {
-    background-color: rgba(128, 0, 32, 0.8); /* Color de fondo más claro al hacer hover */
-    border: 2px solid #d4af37; /* Borde dorado al hacer hover */
-    box-sizing: border-box;
-}
-
-.corbataNov1::before {
-    content: "Blue Royal Tie Set : 30 euros"; /* Texto para la corbata 1 */
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro semi-transparente */
-    color: white;
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
-    opacity: 0; /* Oculto inicialmente */
-    transition: opacity 0.5s ease; /* Transición suave */
-}
-
-.corbataNov1:hover::before {
-    opacity: 1; /* Muestra el texto al hacer hover */
-}
-
-.corbataNov2::before {
-    content: "Royal Pink Tie Set : 30 euros"; /* Texto para la corbata 2 */
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.corbataNov2:hover::before {
-    opacity: 1;
-}
-
-.corbataNov3::before {
-    content: "Purple Floral Tie : 17 euros"; /* Texto para la corbata 3 */
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: white;
-    font-size: 20px;
-    font-family: 'Roboto', sans-serif;
-    opacity: 0;
-    transition: opacity 0.5s ease;
-}
-
-.corbataNov3:hover::before {
-    opacity: 1;
+.boton-comprar:hover {
+    background-color: rgba(128, 0, 32, 0.8); /* Color más claro al hacer hover */
+    border: 2px solid #d4af37; /* Cambiar el borde a dorado al hacer hover */
 }
 
 
@@ -463,8 +445,6 @@ body {
     color: #e2e2d5;
     font-style: italic;
 }
-
-
 
 
 
